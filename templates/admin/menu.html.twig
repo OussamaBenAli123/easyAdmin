@@ -1,0 +1,90 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% macro render_menu_item(item) %}
+    {% if item.isMenuSection %}
+        {% if item.icon is not empty %}<i class="menu-icon fa-fw {{ item.icon }}"></i>{% endif %}
+        <span class="{{ item.cssClass }}">{{ item.label }}</span>
+    {% else %}
+        <a href="{{ item.linkUrl }}" class="{{ item.cssClass }}" target="{{ item.linkTarget }}" rel="{{ item.linkRel }}" referrerpolicy="origin-when-cross-origin">
+            {% if item.icon is not empty %}<i class="menu-icon fa-fw {{ item.icon }}"></i>{% endif %}
+            <span>{{ item.label|raw }}</span>
+            {% if item.hasSubItems %}<i class="fa fa-fw fa-angle-right treeview-icon"></i>{% endif %}
+        </a>
+    {% endif %}
+{% endmacro %}
+
+{% block main_menu_before %}{% endblock %}
+
+<ul class="kt-menu__nav ">
+    {% block main_menu %}
+        {% for menuItem in ea.mainMenu.items %}
+            {% block menu_item %}
+                {% if menuItem.hasSubItems %}
+                <li class="kt-menu__item {{ ea.mainMenu.isSelected(menuItem) ? 'kt-menu__item--active' }} {{ menuItem.hasSubItems ? 'kt-menu__item--submenu' }} {{ ea.mainMenu.isExpanded(menuItem) ? 'kt-menu__item--open' }}" aria-haspopup="true">
+                    <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                        <span class="kt-menu__link-icon">
+                            <i class="{{ menuItem.icon }}"></i>
+                        </span>
+                        <span class="kt-menu__link-text">
+                            {{ menuItem.label }}
+                        </span>
+                        <i class="kt-menu__ver-arrow la la-angle-right"></i>
+                    </a>
+                    <div class="kt-menu__submenu">
+                        <span class="kt-menu__arrow"></span>
+                        <ul class="kt-menu__subnav">
+                            <li class="kt-menu__item  kt-menu__item--parent" aria-haspopup="true"><span class="kt-menu__link"><span class="kt-menu__link-text">{{ menuItem.label }}</span></span></li>
+                            {% for menuSubItem in menuItem.subItems %}
+                                {% block menu_subitem %}
+                                    <li class="kt-menu__item {{ ea.mainMenu.isSelected(menuSubItem) ? 'kt-menu__item--active' }}" aria-haspopup="true">
+                                        <a href="{{ menuSubItem.linkUrl }}" class="kt-menu__link ">
+                                            <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                            <span class="kt-menu__link-text">{{ menuSubItem.label }}</span>
+                                        </a>
+                                    </li>
+                                {% endblock menu_subitem %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                {% else %}
+                    <li class="kt-menu__item {{ ea.mainMenu.isSelected(menuItem) ? 'kt-menu__item--active' }} {{ menuItem.hasSubItems ? 'kt-menu__item--submenu' }}" aria-haspopup="true">
+                        <a href="{{ menuItem.linkUrl }}" class="kt-menu__link">
+                        <span class="kt-menu__link-icon">
+                            <i class="{{ menuItem.icon }}"></i>
+                        </span>
+                            <span class="kt-menu__link-text">
+                            {{ menuItem.label }}
+                        </span>
+                        </a>
+                    </li>
+                {% endif %}
+            {% endblock menu_item %}
+        {% endfor %}
+    {% endblock main_menu %}
+</ul>
+{#
+<ul class="kt-menu__nav" data-widget="tree" data-animation-speed="250">
+    {% block main_menu %}
+    {% for menuItem in ea.mainMenu.items %}
+    {% block menu_item %}
+    <li class="kt-menu__item  kt-menu__item--active">
+        {{ _self.render_menu_item(menuItem) }}
+
+        {% if menuItem.hasSubItems %}
+        <ul class="treeview-menu">
+            {% for menuSubItem in menuItem.subItems %}
+            {% block menu_subitem %}
+            <li class="{{ menuSubItem.isMenuSection ? 'header' }} {{ ea.mainMenu.isSelected(menuSubItem) ? 'active' }}">
+                {{ _self.render_menu_item(menuSubItem) }}
+            </li>
+            {% endblock menu_subitem %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+    {% endblock menu_item %}
+    {% endfor %}
+    {% endblock main_menu %}
+</ul>#}
+
+{% block main_menu_after %}{% endblock %}
