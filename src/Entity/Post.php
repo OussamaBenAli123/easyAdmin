@@ -32,6 +32,16 @@ class Post
      */
     private $category;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true, columnDefinition="enum('Pending', 'Accepted','Refused')")
+     */
+    private $status;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $dateCreated;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +79,30 @@ class Post
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(?string $status): self
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    public function getDateCreated(): ?\DateTimeInterface
+    {
+        return $this->dateCreated;
+    }
+
+    public function setDateCreated(?\DateTimeInterface $dateCreated): self
+    {
+        $this->dateCreated = $dateCreated;
 
         return $this;
     }
