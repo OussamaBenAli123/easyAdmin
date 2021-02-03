@@ -1,4 +1,27 @@
 {% extends 'base.html.twig' %}
+{% block menu %}
+    {{ include(ea.templatePath('main_menu')) }}
+{% endblock %}
+{% block user_profile %}
+    {% if constant('Symfony\\Component\\Security\\Core\\Authorization\\Voter\\AuthenticatedVoter::IS_IMPERSONATOR') is defined %}
+        {% set impersonator_permission = 'IS_IMPERSONATOR' %}
+    {% else %}
+        {% set impersonator_permission = 'ROLE_PREVIOUS_ADMIN' %}
+    {% endif %}
+    <div class="user user-menu-wrapper {{ is_granted(impersonator_permission) ? 'user-is-impersonated' }}" data-toggle="popover" data-placement="bottom" data-container=".user-menu-wrapper" data-html="true">
+        {% if ea.userMenu.isAvatarDisplayed %}
+            {% if null == ea.userMenu.avatarUrl %}
+                <i class="fa fa-fw {{ ea.user is not null ? 'fa-user-circle' : 'fa-user-times' }} user-avatar"></i>
+            {% else %}
+                <img class="user-avatar" src="{{ ea.userMenu.avatarUrl }}" />
+            {% endif %}
+        {% endif %}
+        {% if ea.userMenu.isNameDisplayed %}
+            <span class="user-name">{{ ea.userMenu.name }}</span>
+        {% endif %}
+
+    </div>
+{% endblock %}
 {% block body %}
     {% set has_batch_actions = false and batch_form is defined and ea.crud.actions.batchActions|length > 0 %}
     <div class="kt-subheader   kt-grid__item" id="kt_subheader">
@@ -20,7 +43,7 @@
                             <div class="kt-portlet__head-label">
 
                             </div>
-                            <div class="kt-portlet__head-toolbar">
+                            <div class="kt-portlet__head-toolbar" style="margin-right: -24px;">
                                 <div class="kt-portlet__head-wrapper">
                                     {% for action in global_actions %}
                                         {{ include(action.templatePath, { action: action }, with_context = false) }}
