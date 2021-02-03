@@ -20,12 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="329bbf53-f460-46a1-9152-abcaecf99089" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/easy_admin_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/easy_admin_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Subscribers/PostSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Subscribers/PostSubscriber.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +150,7 @@
       <workItem from="1612190801817" duration="6276000" />
       <workItem from="1612252082662" duration="20173000" />
       <workItem from="1612337181755" duration="12295000" />
-      <workItem from="1612365111761" duration="60000" />
+      <workItem from="1612365111761" duration="537000" />
     </task>
     <servers />
   </component>
