@@ -21,14 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="329bbf53-f460-46a1-9152-abcaecf99089" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210201162335.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/PostCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/PostCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/menu.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/posts/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/posts/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +149,7 @@
       <workItem from="1612189895488" duration="541000" />
       <workItem from="1612190801817" duration="6276000" />
       <workItem from="1612252082662" duration="20173000" />
-      <workItem from="1612337181755" duration="11917000" />
+      <workItem from="1612337181755" duration="12295000" />
     </task>
     <servers />
   </component>

@@ -164,15 +164,17 @@
                                                         {% if field.label=='Status' %}
                                                             <td class="{{ field.property == sort_field_name ? 'sorted' }} {{ field.cssClass }}" dir="{{ ea.i18n.textDirection }}">
                                                                 {% if field.value == 'Pending' %}
-                                                                    <span title="{{ field.value }}" class="alert-info">
-                                                                        {{ field.value }}
+                                                                    <span>
+                                                                        <span title="{{ field.value }}" class="kt-badge  kt-badge--info kt-badge--inline kt-badge--pill">
+                                                                            {{ field.value }}
+                                                                        </span>
                                                                     </span>
                                                                 {% elseif field.value == 'Accepted' %}
-                                                                    <span title="{{ field.value }}" class="alert-success">
+                                                                    <span title="{{ field.value }}" class="kt-badge  kt-badge--success kt-badge--inline kt-badge--pill">
                                                                         {{ field.value }}
                                                                     </span>
                                                                 {% else %}
-                                                                    <span title="{{ field.value }}" class="alert-danger">
+                                                                    <span title="{{ field.value }}" class="kt-badge  kt-badge--danger kt-badge--inline kt-badge--pill">
                                                                         {{ field.value }}
                                                                     </span>
                                                                 {% endif %}
