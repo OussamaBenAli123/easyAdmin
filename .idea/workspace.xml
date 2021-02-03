@@ -20,8 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="329bbf53-f460-46a1-9152-abcaecf99089" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/posts/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/posts/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +116,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/symfony/uid" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
     </include_path>
   </component>
   <component name="ProjectId" id="1nsqSqNvel9l5Bz31jfFO4hozyK" />
@@ -150,6 +150,7 @@
       <workItem from="1612190801817" duration="6276000" />
       <workItem from="1612252082662" duration="20173000" />
       <workItem from="1612337181755" duration="12295000" />
+      <workItem from="1612365111761" duration="537000" />
     </task>
     <servers />
   </component>
@@ -166,6 +167,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser" timestamp="1612350971347">

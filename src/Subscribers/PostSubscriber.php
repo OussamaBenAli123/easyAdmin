@@ -21,11 +21,14 @@ class PostSubscriber implements EventSubscriberInterface
 
     public function setDefaultDateAndState(BeforeEntityPersistedEvent $event)
     {
-        /**
-         * @var Post $post
-         */
-        $post = $event->getEntityInstance();
-        $post->setDateCreated(new \DateTime());
-        $post->setStatus('Pending');
+        if($event->getEntityInstance() instanceof Post)
+        {
+            /**
+             * @var Post $post
+             */
+            $post = $event->getEntityInstance();
+            $post->setDateCreated(new \DateTime());
+            $post->setStatus('Pending');
+        }
     }
 }
