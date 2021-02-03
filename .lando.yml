@@ -1,6 +1,10 @@
 name: my-lando-app
 recipe: lamp
-webroot: public
 config:
-  webroot: .
+  webroot: public
   php: '7.4'
+services:
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database  
