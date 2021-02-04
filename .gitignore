@@ -1,8 +1,8 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env
 /.idea/
+/.idea/workspace.xml
 /.lando.yml
 /.env.local.php
 /.env.*.local
