@@ -1,7 +1,7 @@
 name: my-lando-app
 recipe: lamp
 config:
-  webroot: public
+  webroot: public/
   php: '7.4'
 services:
   pma:
