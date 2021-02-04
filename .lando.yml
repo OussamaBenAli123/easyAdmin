@@ -1,7 +1,7 @@
 name: project_docker_lando
 recipe: lamp
 config:
-  webroot: .
+  webroot: public
   php: '7.4'
 services:
   pma:

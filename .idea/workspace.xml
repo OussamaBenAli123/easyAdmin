@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="329bbf53-f460-46a1-9152-abcaecf99089" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.lando.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.lando.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +151,8 @@
       <workItem from="1612190801817" duration="6276000" />
       <workItem from="1612252082662" duration="20173000" />
       <workItem from="1612337181755" duration="12295000" />
-      <workItem from="1612365111761" duration="537000" />
+      <workItem from="1612365111761" duration="1941000" />
+      <workItem from="1612425016680" duration="1607000" />
     </task>
     <servers />
   </component>
@@ -174,10 +176,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2685" y="202" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1612350971347" />
-    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1612192907733">
+    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1612366455871">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1612192907733" />
+    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1612366455871" />
     <state x="2692" y="243" key="NewPhpClassDialog" timestamp="1612350894291">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
