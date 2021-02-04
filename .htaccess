@@ -6,11 +6,11 @@
 # mod_rewrite). Additionally, this reduces the matching process for the
 # startpage (path "/") because otherwise Apache will apply the rewritting rules
 # to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
+
 DirectoryIndex index.php
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-
 
     Options +FollowSymLinks -MultiViews
     # Turn mod_rewrite on
@@ -23,7 +23,6 @@ DirectoryIndex index.php
 
     RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*)/index\.php [NC]
     RewriteRule ^ %1 [R=301,L]
-
 
     # Redirect to URI without front controller to prevent duplicate content
     # (with and without `/index.php`). Only do this redirect on the initial
