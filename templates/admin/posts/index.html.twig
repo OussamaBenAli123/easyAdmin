@@ -1,4 +1,27 @@
 {% extends 'base.html.twig' %}
+{% block menu %}
+    {{ include(ea.templatePath('main_menu')) }}
+{% endblock %}
+{% block user_profile %}
+    {% if constant('Symfony\\Component\\Security\\Core\\Authorization\\Voter\\AuthenticatedVoter::IS_IMPERSONATOR') is defined %}
+        {% set impersonator_permission = 'IS_IMPERSONATOR' %}
+    {% else %}
+        {% set impersonator_permission = 'ROLE_PREVIOUS_ADMIN' %}
+    {% endif %}
+    <div class="user user-menu-wrapper {{ is_granted(impersonator_permission) ? 'user-is-impersonated' }}" data-toggle="popover" data-placement="bottom" data-container=".user-menu-wrapper" data-html="true">
+        {% if ea.userMenu.isAvatarDisplayed %}
+            {% if null == ea.userMenu.avatarUrl %}
+                <i class="fa fa-fw {{ ea.user is not null ? 'fa-user-circle' : 'fa-user-times' }} user-avatar"></i>
+            {% else %}
+                <img class="user-avatar" src="{{ ea.userMenu.avatarUrl }}" />
+            {% endif %}
+        {% endif %}
+        {% if ea.userMenu.isNameDisplayed %}
+            <span class="user-name">{{ ea.userMenu.name }}</span>
+        {% endif %}
+
+    </div>
+{% endblock %}
 {% block body %}
     {% set has_batch_actions = false and batch_form is defined and ea.crud.actions.batchActions|length > 0 %}
     <div class="kt-subheader   kt-grid__item" id="kt_subheader">
@@ -20,7 +43,7 @@
                             <div class="kt-portlet__head-label">
 
                             </div>
-                            <div class="kt-portlet__head-toolbar">
+                            <div class="kt-portlet__head-toolbar" style="margin-right: -24px;">
                                 <div class="kt-portlet__head-wrapper">
                                     {% for action in global_actions %}
                                         {{ include(action.templatePath, { action: action }, with_context = false) }}
@@ -82,7 +105,7 @@
                                                 </a>
                                                 {% if applied_filters %}
                                                     <a href="{{ ea_url().unset('filters') }}" class="btn btn-secondary action-filters-reset">
-                                                        <i class="fa fa-close"></i>
+                                                        <i class="fa fa-trash"></i>
                                                     </a>
                                                 {% endif %}
                                             </div>
@@ -137,11 +160,30 @@
                                                     {% if has_batch_actions %}
                                                         <td><input type="checkbox" class="form-batch-checkbox" value="{{ entity.primaryKeyValue }}"></td>
                                                     {% endif %}
-
                                                     {% for field in entity.fields %}
-                                                        <td class="{{ field.property == sort_field_name ? 'sorted' }} text-{{ field.textAlign }} {{ field.cssClass }}" dir="{{ ea.i18n.textDirection }}">
-                                                            {{ include(field.templatePath, { field: field, entity: entity }, with_context = false) }}
-                                                        </td>
+                                                        {% if field.label=='Status' %}
+                                                            <td class="{{ field.property == sort_field_name ? 'sorted' }} {{ field.cssClass }}" dir="{{ ea.i18n.textDirection }}">
+                                                                {% if field.value == 'Pending' %}
+                                                                    <span>
+                                                                        <span title="{{ field.value }}" class="kt-badge  kt-badge--info kt-badge--inline kt-badge--pill">
+                                                                            {{ field.value }}
+                                                                        </span>
+                                                                    </span>
+                                                                {% elseif field.value == 'Accepted' %}
+                                                                    <span title="{{ field.value }}" class="kt-badge  kt-badge--success kt-badge--inline kt-badge--pill">
+                                                                        {{ field.value }}
+                                                                    </span>
+                                                                {% else %}
+                                                                    <span title="{{ field.value }}" class="kt-badge  kt-badge--danger kt-badge--inline kt-badge--pill">
+                                                                        {{ field.value }}
+                                                                    </span>
+                                                                {% endif %}
+                                                            </td>
+                                                        {% else %}
+                                                            <td class="{{ field.property == sort_field_name ? 'sorted' }} text-{{ field.textAlign }} {{ field.cssClass }}" dir="{{ ea.i18n.textDirection }}">
+                                                                {{ include(field.templatePath, { field: field, entity: entity }, with_context = false) }}
+                                                            </td>
+                                                        {% endif %}
                                                     {% endfor %}
 
                                                     {% block entity_actions %}
@@ -200,6 +242,9 @@
                         {% block delete_form %}
                             {{ include('@EasyAdmin/crud/includes/_delete_form.html.twig', with_context = false) }}
                         {% endblock delete_form %}
+                        {% if filters|length > 0 %}
+                            {{ include('@EasyAdmin/crud/includes/_filters_modal.html.twig') }}
+                        {% endif %}
                     </div>
                 </div>
             </div>

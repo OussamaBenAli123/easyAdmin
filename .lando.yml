@@ -1,0 +1,10 @@
+name: project_docker_lando
+recipe: lamp
+config:
+  webroot: .
+  php: '7.4'
+services:
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database  
