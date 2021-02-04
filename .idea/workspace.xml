@@ -20,8 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="329bbf53-f460-46a1-9152-abcaecf99089" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.lando.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.lando.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +152,7 @@
       <workItem from="1612252082662" duration="20173000" />
       <workItem from="1612337181755" duration="12295000" />
       <workItem from="1612365111761" duration="1941000" />
-      <workItem from="1612425016680" duration="1607000" />
+      <workItem from="1612425016680" duration="1880000" />
     </task>
     <servers />
   </component>
